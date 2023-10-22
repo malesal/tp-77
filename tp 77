@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  
+    vector<int> A(100);
+    for (int i = 0; i < 100; i++) {
+        A[i] = rand() % 100;
+    }
+
+    vector<int> B(100);
+
+    int cantidadDeUnos = 0;
+
+    for (int i = 0; i < 100; i++) {
+        if (A[i] % 2 == 0 && A[i] > 20) {
+            B[i] = A[i] * 10;
+        } if (A[i] % 2 != 0 && A[i] < 60) {
+            B[i] = A[i] - 30;
+        } else {
+            B[i] = A[i];
+        }
+
+        if (A[i] == 1) {
+            cantidadDeUnos++;
+        }
+    }
+
+    cout << "Vector A: ";
+    for (int i = 0; i < 100; i++) {
+        cout << A[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Vector B: ";
+    for (int i = 0; i < 100; i++) {
+        cout << B[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Cantidad de unos en el vector A: " << cantidadDeUnos << endl;
+
+    return 0;
+}
