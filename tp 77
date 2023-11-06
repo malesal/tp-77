@@ -1,44 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-  
-    vector<int> A(100);
-    for (int i = 0; i < 100; i++) {
-        A[i] = rand() % 100;
-    }
+vector<int> Generar Vectores (vector<int> A);
+vector<int> CuentoVectores (vector<int> A, <vector> int B);
+void MostrarVectores (vector<int> A, vector<int> B);
 
-    vector<int> B(100);
+int main(){
+vector<int>A;
+vector<int> B;
+A= Generar Vectores (A);
+B=CuentoVectores (A, B);
+Mostrar Vectores (A,B);
 
-    int cantidadDeUnos = 0;
-
-    for (int i = 0; i < 100; i++) {
-        if (A[i] % 2 == 0 && A[i] > 20) {
-            B[i] = A[i] * 10;
-        } if (A[i] % 2 != 0 && A[i] < 60) {
-            B[i] = A[i] - 30;
-        } else {
-            B[i] = A[i];
-        }
-
-        if (A[i] == 1) {
-            cantidadDeUnos++;
-        }
-    }
-
-    cout << "Vector A: ";
-    for (int i = 0; i < 100; i++) {
-        cout << A[i] << " ";
-    }
-    cout << endl;
-
-    cout << "Vector B: ";
-    for (int i = 0; i < 100; i++) {
-        cout << B[i] << " ";
-    }
-    cout << endl;
-
-    cout << "Cantidad de unos en el vector A: " << cantidadDeUnos << endl;
-
-    return 0;
+return 0;
+}
+vector<int> GenerarVectores (vector<int> A) {
+Srand (time (NULL));
+for (int i=0; i < 100; i++) {
+A.push_back (rand()% 100); }
+return A;
+}
+vector<int> CuentoVectores (vector<int> A, <vector> int B){
+for (int i=0; i<A.size(); i++) {
+if(A[i]%2==0){
+ if(A[i]>20){
+ B.push_back(A[i]*10);
+}
+if(A[i]<60){
+B.push_back(A[i]-30)
+   }
+ }
+}
+return B;
+}
+void MostrarVectores (vector<int> A, vector<int> B){
+cout<<"Vector A: "<<endl;
+for(int i=0; i<A.size();i++){
+cout<<A[I]<<"";}
+cout<<endl;
+cout<<"Vector b:"<<endl;
+for(int=0; i<B.size();i++){
+cout<<B[i]<<"";
+}
+cout<<endl;
 }
